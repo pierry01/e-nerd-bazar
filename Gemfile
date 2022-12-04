@@ -8,10 +8,14 @@ gem "rails", "~> 7.0.4"
 
 gem "activeadmin", "~> 2.13.1"
 gem "bootsnap", require: false
+
 gem "devise-i18n", "~> 1.10.2"
 gem "devise-jwt", "~> 0.9.0"
 gem "devise", "~> 4.8.1"
+
 gem "graphql", "~> 2.0.11"
+gem "graphiql-rails", group: :development
+
 gem "jbuilder"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
