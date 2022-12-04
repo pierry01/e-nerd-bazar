@@ -1,3 +1,1 @@
-Rails.application.routes.draw do
-  root 'components#index'
-end
+Rails.application.routes.draw { root "application#index" }
