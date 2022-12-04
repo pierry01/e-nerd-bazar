@@ -1,12 +1,61 @@
 {
-  "name": "app",
+  "name": "e-nerd-bazar",
   "private": "true",
+  "scripts": {
+    "lint": "yarn run eslint --ext .js --ext .jsx --ext .gql --ext .graphql app/javascript",
+    "test-unit": "jest app/javascript/App/ --maxWorkers=2",
+    "deploy": "(git stash && git checkout main) && (git reset --hard origin/main && git push heroku HEAD:master) || (echo 'You have to be on main to do this')",
+    "start": "bin/dev",
+    "graphql:dump_schema": "rails graphql:dump_schema",
+    "build": "NODE_PATH=app/javascript/App:app/javascript/App/Components esbuild app/javascript/*.* --bundle --outdir=app/assets/builds --sourcemap --loader:.svg=file --loader:.png=file --loader:.jpg=file --public-path=$CDN_URL_FULL/assets --asset-names=[name]-[hash].digested --target=chrome72,firefox74,safari13,edge19 --minify",
+    "build-dev": "NODE_PATH=app/javascript/App:app/javascript/App/Components esbuild app/javascript/*.* --bundle --outdir=app/assets/builds --sourcemap --loader:.svg=file --loader:.png=file --loader:.jpg=file --public-path=/assets --asset-names=[name]-[hash].digested --target=chrome72,firefox74,safari13,edge19",
+    "build:css": "sass ./app/assets/stylesheets/active_admin.scss:./app/assets/builds/active_admin.css --no-source-map --load-path=node_modules && tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+  },
   "dependencies": {
+    "@activeadmin/activeadmin": "^2.13.1",
+    "@apollo/client": "^3.7.1",
     "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.2.4",
-    "esbuild": "^0.15.17"
+    "axios": "^1.2.0",
+    "esbuild": "^0.15.17",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.21",
+    "phosphor-react": "^1.4.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.4.4",
+    "react-router-dom": "^6.4.4",
+    "react-router-v6-instrumentation": "^2.0.2",
+    "sass": "^1.56.1",
+    "tailwindcss": "^3.2.4"
   },
-  "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+  "devDependencies": {
+    "@prettier/plugin-ruby": "3.2.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.3.0",
+    "@testing-library/user-event": "14.4.3",
+    "esbuild-jest": "0.5.0",
+    "eslint": "8.21.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-graphql": "4.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "26.8.2",
+    "eslint-plugin-jest-dom": "4.0.2",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-playwright": "0.10.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-testing-library": "5.6.0",
+    "jest": "28.1.3",
+    "prettier": "2.7.1"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true
   }
 }

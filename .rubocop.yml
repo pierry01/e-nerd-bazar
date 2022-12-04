@@ -1,0 +1,34 @@
+inherit_from: .rubocop_todo.yml
+
+inherit_gem:
+  prettier: rubocop.yml
+  rubocop-shopify: rubocop.yml
+
+require:
+  - rubocop-graphql
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "app/admin/**/*"
+    - "bin/**/*"
+    - "db/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+    - "tmp/**/*"
+  TargetRubyVersion: 3.1.2
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+Metrics/ClassLength:
+  Exclude:
+    - "app/graphql/types/mutation_type.rb"
+Layout/FirstArgumentIndentation:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false

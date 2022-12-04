@@ -1,0 +1,17 @@
+detectors:
+  # You can disable smells completely
+  IrresponsibleModule:
+    enabled: false
+  Attribute:
+    enabled: false
+
+exclude_paths:
+  - "app/admin/"
+  - "bin"
+  - "spec"
+  - "app/mailers/"
+  - "db/"
+  - "config/"
+  - "node_modules/"
+  - "vendor/"
+  - "tmp/"
