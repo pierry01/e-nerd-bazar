@@ -36,6 +36,7 @@ module.exports = {
       "error",
       {
         env: "apollo",
+
         schemaString: fs.readFileSync(
           path.resolve(__dirname, "./app/graphql/schema.graphql"),
           "utf8"

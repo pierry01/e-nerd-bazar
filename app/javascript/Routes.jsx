@@ -1,14 +1,15 @@
 import React from "react";
-import { Route, Navigate, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
+import Home from "./Pages/Home";
 
 function Router() {
   return (
     <Routes>
-      {/* <Route path="/" element={<Navigate to="/login" />} /> */}
-      <Route path="/" element={<h1>HOME</h1>} />
+      <Route path="/" element={<Home />} />
 
-      {/* <Route path="network-error" element={<NetworkError />} />
-      <Route path="*" element={<NoMatch />} /> */}
+      {/* <Route path="network-error" element={<NetworkError />} /> */}
+      {/* <Route path="*" element={<NoMatch />} /> */}
     </Routes>
   );
 }

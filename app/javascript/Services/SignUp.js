@@ -4,7 +4,7 @@ import client from "Config/GraphqlApiService";
 const Signup = (user, token) =>
   new Promise((res, rej) => {
     axios
-      .post("/signup", { user: user, token })
+      .post("/signup", { user, token })
       .then((response) => {
         client.clearStore();
 
