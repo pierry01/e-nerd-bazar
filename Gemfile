@@ -7,21 +7,17 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4"
 
 gem "activeadmin", "~> 2.13.1"
-gem "bootsnap", require: false
+gem "bootsnap", "~> 1.15.0", require: false
 
 gem "devise-i18n", "~> 1.10.2"
 gem "devise-jwt", "~> 0.9.0"
 gem "devise", "~> 4.8.1"
 
 gem "graphql", "~> 2.0.11"
-gem "graphiql-rails", group: :development
+gem "graphiql-rails", "~> 1.8.0", group: :development
 
-gem "jbuilder"
-gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
-gem "sprockets-rails"
-gem "stimulus-rails"
-gem "turbo-rails"
+gem "pg", "~> 1.4.5"
+gem "puma", "~> 5.6.5"
 
 gem "propshaft", "~> 0.6.4"
 gem "jsbundling-rails", "~> 1.0.2"
@@ -30,7 +26,7 @@ gem "cssbundling-rails", "~> 1.1.1"
 group :development, :test do
   gem "brakeman", "~> 5.3.1"
   gem "bullet", "~> 7.0.3"
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", "~> 1.7.0", platforms: %i[ mri mingw x64_mingw ]
   gem "factory_bot_rails", "~> 6.2.0"
   gem "foreman", "~> 0.87.2"
   gem "listen", "~> 3.7.1"
