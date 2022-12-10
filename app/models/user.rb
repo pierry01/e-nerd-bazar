@@ -9,4 +9,8 @@ class User < ApplicationRecord
          :lockable,
          :trackable,
          :validatable
+
+  validates :full_name, :cpf_cnpj, presence: true
+
+  belongs_to :seller, optional: true
 end

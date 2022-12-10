@@ -22,24 +22,9 @@ module.exports = {
     "jest-dom",
     "graphql",
   ],
-  env: {
-    es6: true,
-    browser: true,
-    node: true,
-    jest: true,
-  },
-  globals: {
-    page: true,
-    browser: true,
-    context: true,
-    google: true,
-  },
-  parserOptions: {
-    ecmaVersion: 2020,
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
+  env: { es6: true, browser: true, node: true, jest: true },
+  globals: { page: true, browser: true, context: true, google: true },
+  parserOptions: { ecmaVersion: 2020, ecmaFeatures: { jsx: true } },
   rules: {
     "import/no-dynamic-require": [0],
     "react/no-danger": [0],
@@ -51,7 +36,6 @@ module.exports = {
       "error",
       {
         env: "apollo",
-
         schemaString: fs.readFileSync(
           path.resolve(__dirname, "./app/graphql/schema.graphql"),
           "utf8"
