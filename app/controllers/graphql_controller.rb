@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GraphqlController < ApiController
+class GraphqlController < ApplicationController
   include ActiveStorage::SetCurrent
 
   before_action :set_heroku_release_version

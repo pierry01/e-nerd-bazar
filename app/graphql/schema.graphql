@@ -1,0 +1,41 @@
+type Mutation {
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+"""
+Product
+"""
+type Product {
+  """
+  Description
+  """
+  description: String!
+
+  """
+  ID
+  """
+  id: ID!
+
+  """
+  Name
+  """
+  name: String!
+
+  """
+  Price
+  """
+  price: Int!
+}
+
+"""
+Queries
+"""
+type Query {
+  """
+  GET a list of Product
+  """
+  products: [Product!]
+}

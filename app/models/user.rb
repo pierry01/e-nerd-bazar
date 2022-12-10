@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   validates :full_name, :cpf_cnpj, presence: true
 
-  belongs_to :seller, optional: true
+  has_many :products, dependent: :destroy
 end
