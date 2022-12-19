@@ -28,6 +28,7 @@ group :development, :test do
   gem "bullet", "~> 7.0.3"
   gem "debug", "~> 1.7.0", platforms: %i[ mri mingw x64_mingw ]
   gem "factory_bot_rails", "~> 6.2.0"
+  gem "faker", "~> 3.0.0"
   gem "foreman", "~> 0.87.2"
   gem "listen", "~> 3.7.1"
   gem "prettier", "~> 3.2.2"

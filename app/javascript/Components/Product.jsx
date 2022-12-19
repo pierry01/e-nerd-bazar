@@ -23,7 +23,7 @@ function Product({ product }) {
         className="w-40 sm:w-60 h-60"
       />
 
-      <div className="border-t p-1 text-start">
+      <div className="border-t p-2 text-start">
         <TextLineClamp
           lineClamp={1}
           paragraph={product.name}
@@ -33,7 +33,7 @@ function Product({ product }) {
         <p className="text-2xl text-gray-700">{parseMoney(product.price)}</p>
 
         <p className="text-xs sm:text-sm text-green-700 mb-1">
-          10x de {parseMoney(product.price / 10)} sem juros
+          10x de {parseMoney(product.price / 10)}
         </p>
 
         <TextLineClamp

@@ -6,8 +6,12 @@ module Queries
 
     type [Types::Product], null: true
 
-    def resolve
-      Product.all
+    argument :search_term, String, "Search term", required: false
+
+    def resolve(search_term: "")
+      return Product.all if search_term.blank?
+
+      Product.where("name ILIKE '%#{search_term}%'")
     end
   end
 end

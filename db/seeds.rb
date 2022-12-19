@@ -10,9 +10,8 @@ user =
 30.times do
   Product.create!(
     user:,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    name: "Nome do produto",
-    price: 10_000
+    description: Faker::Food.description,
+    name: Faker::Food.dish,
+    price: Faker::Number.number(digits: rand(4..6))
   )
 end

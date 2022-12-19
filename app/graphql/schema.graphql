@@ -37,5 +37,10 @@ type Query {
   """
   GET a list of Product
   """
-  products: [Product!]
+  products(
+    """
+    Search term
+    """
+    searchTerm: String
+  ): [Product!]
 }
