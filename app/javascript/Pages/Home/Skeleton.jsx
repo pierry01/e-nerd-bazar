@@ -1,11 +1,9 @@
 import React from "react";
 
 function Skeleton() {
-  const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   return (
     <div className="flex flex-row flex-wrap">
-      {items.map((item) => (
+      {[...Array(18).keys()].map((item) => (
         <div key={item} className="w-40 sm:w-60 h-96 border m-1 animate-pulse">
           <div className="w-40 sm:w-60 h-60 bg-gray-200" />
 

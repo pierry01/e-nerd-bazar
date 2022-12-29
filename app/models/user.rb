@@ -8,7 +8,9 @@ class User < ApplicationRecord
          :rememberable,
          :lockable,
          :trackable,
-         :validatable
+         :validatable,
+         :jwt_authenticatable,
+         jwt_revocation_strategy: self
 
   validates :full_name, :cpf_cnpj, presence: true
 

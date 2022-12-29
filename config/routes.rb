@@ -15,5 +15,9 @@ Rails.application.routes.draw do
 
   constraints = ->(request) { !request.xhr? && request.format.html? }
 
-  get "/sign-up", to: "main#index", constraints:
+  get "/login", to: "application#index", constraints: constraints
+
+  devise_scope :user do
+    post "/users/sign_in" => "sessions#create"
+  end
 end

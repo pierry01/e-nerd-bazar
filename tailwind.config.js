@@ -6,9 +6,9 @@ module.exports = {
     extend: {
       fontSize: { xxs: "0.625rem" },
       colors: {
-        palette1: "#73B1D7",
-        palette2: "#FCADCB",
-        palette3: "#BE81D8",
+        "palette-1": "#73B1D7",
+        "palette-2": "#FCADCB",
+        "palette-3": "#BE81D8",
       },
     },
   },
